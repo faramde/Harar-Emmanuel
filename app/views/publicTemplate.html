@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<title>#{get 'title' /}</title>
+	<link rel="stylesheet" media="screen" href="@{'/public/stylesheets/showcase.css'}">
+    <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/jquery.ui.timepicker.css'}">
+    <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/jquery.ui.selectmenu.css'}">
+    <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/themes/dark-hive/jquery-ui-1.8.16.custom.css'}">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript" charset="${_response_encoding}"></script>
+    <script src="@{'/public/javascripts/jquery.dataTables.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js" type="text/javascript" charset="${_response_encoding}"></script>
+    <script src="@{'/public/javascripts/jquery.ui.selectmenu.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+    <script src="@{'/public/javascripts/jquery.ui.timepicker.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+	<script type="text/javascript" src="http://jqueryui.com/themeroller/themeswitchertool/"></script>
+    <script src="@{'/public/javascripts/tiny_mce346/tiny_mce.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+    <script src="@{'/public/javascripts/setupControls.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+	
+</head>
+<body>
+	<div id="header">
+	<div id="loading"><img src="images/spinner.gif"/></div>
+		<div id="header1">
+		</div>
+		<div id="logo">Harar Emmanuel Church</div>
+		<div id="header2">
+			<div id="options">
+				<ul id="menu">
+					<div id="switcher" style="float:left;clear:both"></div>
+					<li> <li class="${request.controller == 'Menus' ? 'selected' : ''}">
+						<a href="@{Application.logout()}">Home</a> 
+					</li>
+					<li class="${request.controller == 'AboutUs' ? 'selected' : ''}">
+						<a href="@{AboutUs.showAboutUs()}">About US</a>
+					</li>
+					<li class="${request.controller == 'ContactUs' ? 'selected' : ''}">
+						<a href="@{ContactUs.showContactUs}">Contact Us</a>
+					</li>
+					<li class="${request.controller == 'Events' ? 'selected' : ''}">
+						<a href="@{Events.showEvents}">Events</a>
+					</li>
+					<li> <li class="${request.controller == 'Events' ? 'selected' : ''}">
+						<a href="@{Events.showEvents}">Media Resources</a> 
+					</li>
+					<li> <li class="${request.controller == 'Ministries' ? 'selected' : ''}">
+						<a href="@{Ministries.index}">Our Ministries</a> 
+					</li>
+					
+				</ul>
+			</div>
+		</div>
+	</div>
+   	<div id="container">
+       	<aside id="sidebar">
+			<span id="login">
+				#{form @login(),id:'formLogin'}
+			
+					<fieldset>
+						#{if flash.error}
+						<p class="fError">
+							<strong>${flash.error}</strong>
+						</p>
+						#{/if} 
+						
+						<p id="username-field">
+							<label for="username">User Name</label>
+							<input type="text" name="username" id="username" value="${flash.username}"/>
+						</p>
+						<p id="password-field">
+							<label for="password">Password</label>
+							<input type="password" name="password" id="password" value=""/>
+						</p>
+						<p id="signin-field">
+							<input type="submit" id="signin" value="Login" />
+						</p>
+						<div class="notes">
+			               	<a id="login:register" name="login:register" href="@{Application.register}">Register New User</a>
+						</div>
+					</fieldset> 
+					#{/form} 
+				<p id="field">
+					<span id="login">
+						<fieldset>
+							<iframe width="175" height="300"
+								src="http://www-igprev-opensocial.googleusercontent.com/gadgets/ifr?exp_rpc_js=1&amp;exp_track_js=1&amp;url=http%3A%2F%2Fwww.believer.com%2Foutreach%2FversetodayNIV.xml&amp;container=igprev&amp;
+								view=default&amp;lang=en&amp;country=US&amp;sanitize=0&amp;v=2ba375683ce0f604&amp;parent=http://www.google.com&amp;libs=core:core.io:core.iglegacy:auth-refresh&amp;synd=igprev&amp;view=default#rpctoken=-31181842&amp;
+								ifpctok=-31181842"></iframe>
+						</fieldset>
+					</span>
+				</p>
+			</span>
+       	</aside>
+	   	<div id="content">
+		#{doLayout /}
+    </div>
+	<div id="footer">
+		Footer
+   	</div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+#{extends 'privateTemplate.html' /}
+#{set title:'Upload Picture' /}
+
+<ul>
+#{list items:models.Video.findAll(), as:'video'}
+    <li>${video.id} 
+	<video width="320" height="240" controls="controls">
+  	<source src="@{UploadVideo.getVideo(video.id)}" />
+ 	 </li>
+  Your browser does not support the video tag.
+</video>
+#{/list}
+</ul>
+
+#{form @UploadVideo.uploadVideo(), enctype:'multipart/form-data'}
+
+    <input type="file" name="video.image" />
+    <input type="submit" name="submit" value="Save" />
+#{/form}
+
+
+
+     
+
+
+        

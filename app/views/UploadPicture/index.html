@@ -1,0 +1,26 @@
+#{extends 'privateTemplate.html' /}
+#{set title:'Upload Picture' /}
+
+<ul>
+#{list items:models.Picture.findAll(), as:'picture'}
+    <li>${picture.id} <img src="@{UploadPicture.getPicture(picture.id)}" /></li>
+#{/list}
+</ul>
+
+#{form @UploadPicture.uploadPicture(), enctype:'multipart/form-data'}
+
+    <input type="file" name="picture.image" />
+    <input type="submit" name="submit" value="Save" />
+#{/form}
+
+
+<video width="320" height="240" controls="controls">
+  <source src="http://w3schools.com/html5/movie.mp4" type="video/mp4" />
+  <source src="http://w3schools.com/html5/movie.ogg" type="video/ogg" />
+  Your browser does not support the video tag.
+</video>
+
+     
+
+
+        

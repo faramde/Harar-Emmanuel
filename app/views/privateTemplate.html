@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<title>#{get 'title' /}</title>
+	<link rel="stylesheet" media="screen" href="@{'/public/stylesheets/showcase.css'}">
+    <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/jquery.ui.timepicker.css'}">
+    <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/jquery.ui.selectmenu.css'}">
+    <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/themes/dark-hive/jquery-ui-1.8.16.custom.css'}">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript" charset="${_response_encoding}"></script>
+    <script src="@{'/public/javascripts/jquery.dataTables.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js" type="text/javascript" charset="${_response_encoding}"></script>
+    <script src="@{'/public/javascripts/jquery.ui.selectmenu.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+    <script src="@{'/public/javascripts/jquery.ui.timepicker.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+	<script type="text/javascript" src="http://jqueryui.com/themeroller/themeswitchertool/"></script>
+    <script src="@{'/public/javascripts/tiny_mce346/tiny_mce.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+    <script src="@{'/public/javascripts/setupControls.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+	
+</head>
+<body>
+	<div id="header">
+		<div id="header1">
+			<div id="options">
+				<ui id="menu">
+				<li><a href="@{Application.logout()}">Log Out</a></li>
+				</ui>
+			</div>
+		</div>
+		<div id="logo">Harar Emmanuel Church. 
+			<strong class="fSuccess">${flash.success}</strong>
+		</div>
+		<div id="header2">
+			<div id="options">
+				<ul id="menu">
+					<li class="${request.controller == 'Menus' ? 'selected' : ''}">
+						<a href="@{Application.logout()}">Home</a> 
+					</li>
+					<li class="${request.controller == 'AboutUs' ? 'selected' : ''}">
+						<a href="@{AboutUs.showAboutUs()}">About US</a>
+					</li>
+					<li class="${request.controller == 'ContactUs' ? 'selected' : ''}">
+						<a href="@{ContactUs.showContactUs}">Contact Us</a>
+					</li>
+					<li class="${request.controller == 'UploadVideo' ? 'selected' : ''}">
+						<a href="@{UploadVideo.index}">Upload Video</a>
+					</li>
+					<li> <li class="${request.controller == 'UploadPicture' ? 'selected' : ''}">
+						<a href="@{UploadPicture.index}">Upload Picture</a> 
+					</li>
+					<li> <li class="${request.controller == 'Ministries' ? 'selected' : ''}">
+						<a href="@{Ministries.index}">Our Ministries</a> 
+					</li>
+					<li> <li class="${request.controller == 'Application' ? 'selected' : ''}">
+						<a href="@{Application.settings}">Settings</a> 
+					</li>
+						<li> <li class="${request.controller == 'Application' ? 'selected' : ''}">
+						<a href="@{Application.blogIndex}">Blog</a> 
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+  	<div id="container">
+		<aside id="sidebar">
+			<span id="login"> 
+			</span>
+		</aside>
+		<div id="content">
+		#{doLayout /}
+		</div>    
+    </div>
+	<div id="footer">
+		Footer
+   	</div>
+</body>
+</html>
+
