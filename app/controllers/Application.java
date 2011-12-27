@@ -1,19 +1,20 @@
 package controllers;
 
-import play.*;
-import play.mvc.*;
-import play.data.validation.*;
-import play.libs.*;
-import play.cache.*;
-import service.Aggregator;
- 
 import java.io.IOException;
-import java.util.*;
+import java.util.List;
 
-import com.sun.syndication.feed.synd.SyndEntry;
+import models.Post;
+import models.User;
+import play.Play;
+import play.cache.Cache;
+import play.data.validation.Required;
+import play.data.validation.Valid;
+import play.libs.Codec;
+import play.libs.Images;
+import play.mvc.Before;
+import play.mvc.Controller;
+
 import com.sun.syndication.io.FeedException;
-
-import models.*;
  
 public class Application extends Controller {
 	
@@ -42,12 +43,10 @@ public class Application extends Controller {
         return null;
     }
     
-    public static void index() throws IllegalArgumentException, FeedException, IOException {
+    public static void index() throws IllegalArgumentException, FeedException, IOException  {
         Post frontPost = Post.find("order by postedAt desc").first();
         List<Post> olderPosts = Post.find("order by postedAt desc").from(1).fetch(10);
-		Aggregator aggregator = new Aggregator();
-		List<SyndEntry> entries = aggregator.parse("www.believer.com/outreach/versetodayNIV.xml", 1);
-        render(frontPost, olderPosts, entries);
+        render(frontPost, olderPosts);
     }
     
     public static void register() {
@@ -74,7 +73,7 @@ public class Application extends Controller {
         render();
     }
     
-    public static void saveSettings(String password, String verifyPassword) throws IllegalArgumentException, FeedException, IOException {
+    public static void saveSettings(String password, String verifyPassword) throws IllegalArgumentException, FeedException, IOException{
         User connected = connected();
         connected.password = password;
         validation.valid(connected);

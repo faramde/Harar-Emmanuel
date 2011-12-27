@@ -20,11 +20,18 @@ public class Security extends Secure.Security {
     }
     
     static void onDisconnected() {
-        try {
-			Application.index();
-		} catch (IllegalArgumentException | FeedException | IOException e) {
-			e.printStackTrace();
-		}
+			try {
+				Application.index();
+			} catch (IllegalArgumentException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (FeedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
     }
     
     static void onAuthenticated() {
