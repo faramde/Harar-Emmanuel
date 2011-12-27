@@ -15,13 +15,16 @@
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>org.playframework.playclipse.playNature</nature>
 	</natures>
-	<linkedResources><link><name>crud</name><type>2</type><location>C:/play-1.2.4/modules/crud/app</location></link>
-<link><name>conf/crud</name><type>2</type><location>C:/play-1.2.4/modules/crud/conf</location></link>
-<link><name>public/crud</name><type>2</type><location>C:/play-1.2.4/modules/crud/public</location></link>
-<link><name>cobertura-2.4</name><type>2</type><location>C:/workspace/play-harar-emmanuel/modules/cobertura-2.4/app</location></link>
-<link><name>conf/cobertura-2.4</name><type>2</type><location>C:/workspace/play-harar-emmanuel/modules/cobertura-2.4/conf</location></link>
-<link><name>secure</name><type>2</type><location>C:/play-1.2.4/modules/secure/app</location></link>
-<link><name>conf/secure</name><type>2</type><location>C:/play-1.2.4/modules/secure/conf</location></link>
-<link><name>public/secure</name><type>2</type><location>C:/play-1.2.4/modules/secure/public</location></link>
+	<linkedResources><link><name>jqueryui-1.0</name><type>2</type><location>C:/Users/faramde/git/Harar-Emmanuel/modules/jqueryui-1.0/app</location></link>
+<link><name>conf/jqueryui-1.0</name><type>2</type><location>C:/Users/faramde/git/Harar-Emmanuel/modules/jqueryui-1.0/conf</location></link>
+<link><name>public/jqueryui-1.0</name><type>2</type><location>C:/Users/faramde/git/Harar-Emmanuel/modules/jqueryui-1.0/public</location></link>
+<link><name>crud</name><type>2</type><location>C:/play-1.2/modules/crud/app</location></link>
+<link><name>conf/crud</name><type>2</type><location>C:/play-1.2/modules/crud/conf</location></link>
+<link><name>public/crud</name><type>2</type><location>C:/play-1.2/modules/crud/public</location></link>
+<link><name>secure</name><type>2</type><location>C:/play-1.2/modules/secure/app</location></link>
+<link><name>conf/secure</name><type>2</type><location>C:/play-1.2/modules/secure/conf</location></link>
+<link><name>public/secure</name><type>2</type><location>C:/play-1.2/modules/secure/public</location></link>
+<link><name>cobertura-2.4</name><type>2</type><location>C:/Users/faramde/git/Harar-Emmanuel/modules/cobertura-2.4/app</location></link>
+<link><name>conf/cobertura-2.4</name><type>2</type><location>C:/Users/faramde/git/Harar-Emmanuel/modules/cobertura-2.4/conf</location></link>
 </linkedResources>
 </projectDescription>

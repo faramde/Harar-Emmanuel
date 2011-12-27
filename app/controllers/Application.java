@@ -5,8 +5,14 @@ import play.mvc.*;
 import play.data.validation.*;
 import play.libs.*;
 import play.cache.*;
+import service.Aggregator;
  
+import java.io.IOException;
 import java.util.*;
+
+import com.sun.syndication.feed.synd.SyndEntry;
+import com.sun.syndication.io.FeedException;
+
 import models.*;
  
 public class Application extends Controller {
@@ -36,17 +42,19 @@ public class Application extends Controller {
         return null;
     }
     
-    public static void index() {
+    public static void index() throws IllegalArgumentException, FeedException, IOException {
         Post frontPost = Post.find("order by postedAt desc").first();
         List<Post> olderPosts = Post.find("order by postedAt desc").from(1).fetch(10);
-        render(frontPost, olderPosts);
+		Aggregator aggregator = new Aggregator();
+		List<SyndEntry> entries = aggregator.parse("www.believer.com/outreach/versetodayNIV.xml", 1);
+        render(frontPost, olderPosts, entries);
     }
     
     public static void register() {
         render();
     }
     
-    public static void saveUser(@Valid User user, String verifyPassword) {
+    public static void saveUser(@Valid User user, String verifyPassword) throws IllegalArgumentException, FeedException, IOException {
         validation.required(verifyPassword);
         validation.equals(verifyPassword, user.password).message("Your password doesn't match");
         if(validation.hasErrors()) {
@@ -66,7 +74,7 @@ public class Application extends Controller {
         render();
     }
     
-    public static void saveSettings(String password, String verifyPassword) {
+    public static void saveSettings(String password, String verifyPassword) throws IllegalArgumentException, FeedException, IOException {
         User connected = connected();
         connected.password = password;
         validation.valid(connected);
@@ -118,7 +126,7 @@ public class Application extends Controller {
         render(tag, posts);
     }
     
-	public static void login(String username, String password) {
+	public static void login(String username, String password) throws IllegalArgumentException, FeedException, IOException {
 		User user = User.find("byEmailAndPassword", username, password).first();
 		if(user != null) {
 			session.put("user", user.fullname);
@@ -131,7 +139,7 @@ public class Application extends Controller {
 		index();
 	}
 	
-	public static void logout() {
+	public static void logout() throws IllegalArgumentException, FeedException, IOException {
 		session.clear();
 		index();
 	}

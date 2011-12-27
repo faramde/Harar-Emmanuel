@@ -1,5 +1,9 @@
 package controllers;
 
+import java.io.IOException;
+
+import com.sun.syndication.io.FeedException;
+
 import models.*;
 
 public class Security extends Secure.Security {
@@ -16,7 +20,11 @@ public class Security extends Secure.Security {
     }
     
     static void onDisconnected() {
-        Application.index();
+        try {
+			Application.index();
+		} catch (IllegalArgumentException | FeedException | IOException e) {
+			e.printStackTrace();
+		}
     }
     
     static void onAuthenticated() {
