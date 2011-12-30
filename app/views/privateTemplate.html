@@ -5,18 +5,10 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<title>#{get 'title' /}</title>
 	<link rel="stylesheet" media="screen" href="@{'/public/stylesheets/showcase.css'}">
-    <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/jquery.ui.timepicker.css'}">
-    <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/jquery.ui.selectmenu.css'}">
-    <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/themes/dark-hive/jquery-ui-1.8.16.custom.css'}">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript" charset="${_response_encoding}"></script>
-    <script src="@{'/public/javascripts/jquery.dataTables.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js" type="text/javascript" charset="${_response_encoding}"></script>
-    <script src="@{'/public/javascripts/jquery.ui.selectmenu.js'}" type="text/javascript" charset="${_response_encoding}"></script>
-    <script src="@{'/public/javascripts/jquery.ui.timepicker.js'}" type="text/javascript" charset="${_response_encoding}"></script>
-	<script type="text/javascript" src="http://jqueryui.com/themeroller/themeswitchertool/"></script>
-    <script src="@{'/public/javascripts/tiny_mce346/tiny_mce.js'}" type="text/javascript" charset="${_response_encoding}"></script>
-    <script src="@{'/public/javascripts/setupControls.js'}" type="text/javascript" charset="${_response_encoding}"></script>
-	
+        #{stylesheet src:"main.css" /}
+        <link rel="shortcut icon" type="image/png" href="@{'/public/images/favicon.png'}" />
+        #{script src:"jquery-1.4.2.min.js" /}
+        #{script src:"jquery.tools-1.2.5.toolbox.expose.min.js" /}
 </head>
 <body>
 	<div id="header">
@@ -27,17 +19,14 @@
 				</ui>
 			</div>
 		</div>
-		<div id="logo">Harar Emmanuel Church. 
-			<strong class="fSuccess">${flash.success}</strong>
+		<div id="logo"> 
+			<h1>Harar Emmanuel United Church.<strong class="fSuccess">${flash.success}</strong></h1> 
 		</div>
 		<div id="header2">
-			<div id="options">
+             <div id="options">
 				<ul id="menu">
 					<li class="${request.controller == 'Menus' ? 'selected' : ''}">
 						<a href="@{Application.logout()}">Home</a> 
-					</li>
-					<li class="${request.controller == 'AboutUs' ? 'selected' : ''}">
-						<a href="@{AboutUs.showAboutUs()}">About US</a>
 					</li>
 					<li class="${request.controller == 'ContactUs' ? 'selected' : ''}">
 						<a href="@{ContactUs.showContactUs}">Contact Us</a>
@@ -51,27 +40,37 @@
 					<li> <li class="${request.controller == 'Ministries' ? 'selected' : ''}">
 						<a href="@{Ministries.index}">Our Ministries</a> 
 					</li>
-					<li> <li class="${request.controller == 'Application' ? 'selected' : ''}">
-						<a href="@{Application.settings}">Settings</a> 
+					<li> <li class="${request.controller == 'PasswardSetting' ? 'selected' : ''}">
+						<a href="@{PasswardSetting.settings()}">Settings</a> 
 					</li>
 						<li> <li class="${request.controller == 'Application' ? 'selected' : ''}">
 						<a href="@{Application.blogIndex}">Blog</a> 
 					</li>
 				</ul>
-			</div>
+			 </div>
 		</div>
 	</div>
   	<div id="container">
 		<aside id="sidebar">
 			<span id="login"> 
+				<fieldset>
+					<h1>"Gospel in a nutshell"</h1>
+					<p>John 3:16:For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life.</p> 
+					<p>John 3:17 :For God did not send his Son into the world to condemn the world, but to save the world through him.</p> 
+					<p>John 3:18 : Whoever believes in him is not condemned, but whoever does not believe stands condemned already because he has not believed in the name of God's one and only Son</p>
+				</fieldset>
 			</span>
 		</aside>
-		<div id="content">
-		#{doLayout /}
-		</div>    
+	   	<div id="content">
+	   		<div id="section">
+	   			#{doLayout /}
+	   		</div>
+    	</div>   
     </div>
 	<div id="footer">
-		Footer
+            Harar Emmanuel United Church (እማኑኤል ህብረት ቤተክርስቲያን) </br>
+			Is church that has its origins in different groups of charismatic youth's 
+			in the Ethiopian Orthodox Church. Its established in Harar
    	</div>
 </body>
 </html>

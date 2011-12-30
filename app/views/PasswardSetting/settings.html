@@ -4,12 +4,8 @@
 <h1>Change your password</h1>
 
 #{form @saveSettings()}
-	 #{if flash.error}
-		<p class="fError">
-			<strong>${flash.error}</strong>
-		</p>
-#{/if} #{field 'connected.password'}
-<p class="${field.errorClass}">
+    #{field 'connected.password'}
+        <p class="${field.errorClass}">
             <strong>Password:</strong> <input type="password" name="password" size="16" value="${connected?.password}"> *
             <span class="error">${field.error}</span>
         </p>

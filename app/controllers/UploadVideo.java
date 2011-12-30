@@ -1,6 +1,5 @@
 package controllers;
 
-import models.Picture;
 import models.Video;
 
 public class UploadVideo extends Application{
@@ -14,8 +13,9 @@ public class UploadVideo extends Application{
         index();
     }
     public static void getVideo(long id) {
-        Video video = Picture.findById(id);
-        response.setContentTypeIfNotSet(video.video.type());
-        renderBinary(video.video.get());
+        Video video = Video.findById(id);
+        response.setContentTypeIfNotSet(video.videos.type());
+        renderBinary(video.videos.get());
     }
 }
+

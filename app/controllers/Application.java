@@ -36,9 +36,9 @@ public class Application extends Controller {
         if(renderArgs.get("user") != null) {
             return renderArgs.get("user", User.class);
         }
-        String username = session.get("user");
-        if(username != null) {
-            return User.find("byEmail", username).first();
+        String email = session.get("user");
+        if(email != null) {
+            return User.find("byEmail", email).first();
         } 
         return null;
     }
@@ -66,25 +66,9 @@ public class Application extends Controller {
         index();
     }
     
-    public static void settings() {
-        render();
-    }
+
     public static void index() throws IllegalArgumentException, FeedException, IOException  {
         render();
-    }
-    
-    public static void saveSettings(String password, String verifyPassword) throws IllegalArgumentException, FeedException, IOException{
-        User connected = connected();
-        connected.password = password;
-        validation.valid(connected);
-        validation.required(verifyPassword);
-        validation.equals(verifyPassword, password).message("Your password doesn't match");
-        if(validation.hasErrors()) {
-            render("@settings", connected, verifyPassword);
-        }
-        connected.save();
-        flash.success("Password updated");
-        index();
     }
     
     public static void show(Long id) {

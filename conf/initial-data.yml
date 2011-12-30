@@ -12,6 +12,11 @@ User(bob):
     fullname:       Fikre
     isAdmin:        true
     
+models.User(test1):
+    email:   test1@gmail.com
+    password:   test1
+    fullname:       Test1
+    
 User(jeff):
     email:          jeff@gmail.com
     password:       secret
