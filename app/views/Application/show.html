@@ -1,4 +1,4 @@
-#{extends 'main.html' /}
+#{extends 'privateTemplate.html' /}
 #{set title:post.title /}
 
 <ul id="pagination">
@@ -35,8 +35,8 @@
         <input type="text" name="author" id="author" value="${params.author}" />
     </p>
     <p>
-        <label for="content">Your message: </label>
-        <textarea name="content" id="content">${params.content}</textarea>
+        <label for="test12">Your message: </label>
+        <textarea name="content" id="test12">${params.content}</textarea>
     </p>
     <p>
         <label for="code">Please type the code below: </label>
@@ -50,17 +50,3 @@
     </p>
 #{/form}
 
-<script type="text/javascript" charset="${_response_encoding}">
-    $(function() {         
-        // Expose the form 
-        $('form').click(function() { 
-            $('form').expose({api: true}).load(); 
-        }); 
-        
-        // If there is an error, focus to form
-        if($('form .error').size()) {
-            $('form').expose({api: true, loadSpeed: 0}).load(); 
-            $('form input[type=text]').get(0).focus();
-        }
-    });
-</script>

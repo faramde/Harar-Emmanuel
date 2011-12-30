@@ -43,7 +43,7 @@ public class Application extends Controller {
         return null;
     }
     
-    public static void index() throws IllegalArgumentException, FeedException, IOException  {
+    public static void blogIndex() {
         Post frontPost = Post.find("order by postedAt desc").first();
         List<Post> olderPosts = Post.find("order by postedAt desc").from(1).fetch(10);
         render(frontPost, olderPosts);
@@ -69,7 +69,7 @@ public class Application extends Controller {
     public static void settings() {
         render();
     }
-    public static void blogIndex() {
+    public static void index() throws IllegalArgumentException, FeedException, IOException  {
         render();
     }
     
