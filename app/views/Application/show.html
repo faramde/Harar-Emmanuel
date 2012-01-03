@@ -33,14 +33,16 @@
     <p>
         <label for="author">Your name: </label>
         <input type="text" name="author" id="author" value="${params.author}" />
+    
     </p>
+    </br>
     <p>
-        <label for="test12">Your message: </label>
+        <label for="test12">Write comment: </label>
         <textarea name="content" id="test12">${params.content}</textarea>
     </p>
     <p>
-        <label for="code">Please type the code below: </label>
-        <img src="@{Application.captcha(randomID)}" />
+        <label for="captcha">Please type the code below: </label>
+        <img src="@{Application.captcha(randomID)}" id="captcha"/>
         <br />
         <input type="text" name="code" id="code" size="18" value="" />
         <input type="hidden" name="randomID" value="${randomID}" />
