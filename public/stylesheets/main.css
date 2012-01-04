@@ -20,6 +20,7 @@ body {
     -moz-border-radius: 16px;
     padding: 20px;
     background-image: url("../images/page_bg.jpg");
+    width: 102%;
 }
 
 /** Post **/

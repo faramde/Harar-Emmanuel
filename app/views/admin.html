@@ -5,6 +5,7 @@
         <title>Administration</title>		
         <meta http-equiv="Content-Type" content="text/html; charset=${_response_encoding}"/>
         #{get 'moreStyles' /}
+		<link rel="stylesheet" media="screen" href="@{'/public/stylesheets/showcase.css'}">
         <link rel="stylesheet" type="text/css" media="screen" href="@{'/public/stylesheets/main.css'}" />
         <link rel="shortcut icon" type="image/png" href="@{'/public/images/favicon.png'}" />
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript" charset="${_response_encoding}"></script>
@@ -13,23 +14,24 @@
     <script src="@{'/public/javascripts/jquery.ui.selectmenu.js'}" type="text/javascript" charset="${_response_encoding}"></script>
     <script src="@{'/public/javascripts/jquery.ui.timepicker.js'}" type="text/javascript" charset="${_response_encoding}"></script>
 	<script type="text/javascript" src="http://jqueryui.com/themeroller/themeswitchertool/"></script>
-    <script src="@{'/public/javascripts/tiny_mce346/tiny_mce.js'}" type="text/javascript" charset="${_response_encoding}"></script>
     <script src="@{'/public/javascripts/setupControls.js'}" type="text/javascript" charset="${_response_encoding}"></script>
 	
     </head>
     <body id="admin">
         
         <div id="header">
-            <div id="logo">
-                HEUC. <span>administration</span>
-            </div>
-            <ul id="tools">
-                <li>
-                    <a href="@{Secure.logout()}">Log out</a>
-                </li>
-            </ul>
+		<div id="header1">
+			<div id="options">
+				<ui id="menu">
+				<li><a href="@{Secure.logout()}">Log Out</a></li>
+				</ui>
+			</div>
+		</div>
+		<div id="logo"> 
+			<h1>HEUC. administration</h1>
+		</div>
+        <div id="header2"> </div>       
         </div>
-        
         <div id="main">
             
             <ul id="adminMenu">
@@ -37,6 +39,12 @@
                     <li class="${request.controller == 'Members' ? 'selected' : ''}">
                         <a href="@{Members.list()}">Members</a>
                     </li>
+                    <li class="${request.controller == 'UploadVideo' ? 'selected' : ''}">
+						<a href="@{UploadVideo.index}">Upload Video</a>
+					</li>
+					<li> <li class="${request.controller == 'UploadPicture' ? 'selected' : ''}">
+						<a href="@{UploadPicture.index}">Upload Picture</a> 
+					</li>
                     <li class="${request.controller == 'Posts' ? 'selected' : ''}">
                         <a href="@{Posts.list()}">Posts</a>
                     </li>
