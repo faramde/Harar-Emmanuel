@@ -2,15 +2,7 @@
 #{set title:'Upload Video' /}
 
 
-<ul>
-#{list items:models.Video.findAll(), as:'videos'}
-	<video width="320" height="240" controls="controls">
-    <source src="@{UploadVideo.getVideo(videos.id)}"></source>
-	</video>
-#{/list}
-</ul>
-
-#{form @UploadVideo.uploadVideo(), enctype:'multipart/form-data'}
+#{form @DisplayVideos.uploadVideo(), enctype:'multipart/form-data'}
 
     <input type="file" name="video.videos" />
     <input type="submit" name="submit" value="Save" />

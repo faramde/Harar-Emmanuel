@@ -5,11 +5,6 @@ body {
     font-size: small;
     line-height: 1.25em;
    # color: #D3D4D5;
-    position: relative;
-    width: 960px;
-    height: 100%;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 a {
@@ -54,14 +49,14 @@ select {
 
 #header {
     height: 100px;
-    width:958px;
+    width:1280px;
     position: relative;
-  #  background: #fff url(../images/hotel.jpg) 0px -90px no-repeat;
+    left: -8px;
 }
 
 #header1 {
 	float: left;
-    width: 958px;
+    width: 1280px;
     margin: 0;
     background: #fff url(../images/branding_main.png);
     border-bottom: 1px solid rgba(255,255,255,.5);
@@ -77,10 +72,12 @@ select {
 	float: left;
     width: 958px;
     margin: 0;
-    background: #fff url(../images/branding_maim02.png);
+   # background: #fff url(../images/branding_maim02.png);
     border-bottom: 1px solid rgba(255,255,255,.5);
     font-size: 12px;
     height: 20px;
+    position: relative;
+    right: -150px;
     text-align: right;  
     color: white;
     background-color: transparent;
@@ -125,12 +122,12 @@ select {
 
 #logo {
     margin: 0;
-    background: #fff url(../images/bg-banner.jpg);
+    background: #fff url(../images/bg-logo.png);
     border-bottom: 1px solid rgba(255,255,255,.5);
     font-weight: lighter;
     padding: 10px 20px;
     display: block;
-    height: 49px;
+    height: 100px;
 }
 
 #logo h1 {
@@ -170,7 +167,13 @@ div.overlay-widget {
 #container {
     float: left;
     width: 958px;
-    background: url("../images/page_bg.jpg") 0 0 repeat-x;
+    background: url("../images/bg-container.png") 0 0 repeat-x;
+   	position: relative;
+   	left: 140px;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    
 }
 
 .fError, .fSuccess {
@@ -287,7 +290,7 @@ text-shadow: #C89F40 2px 2px 2px;
     float: left;
     padding: 20px;
     border-top: 1px solid #C3BBB6;
-    width: 818px;
+    width: 1280px;
     text-align: center;
     color: #869AB1;
     font-size: small;
@@ -312,8 +315,8 @@ text-shadow: #C89F40 2px 2px 2px;
     border-bottom-right-radius: 5px;
 
     background-attachment: scroll;
-    background: #EDEFF4;
- #   background-color: transparent;
+  #  background: #EDEFF4;
+#   background-color: transparent;
 
    # background-image: url("../images/div.bg.png");
     border: solid 1px white;

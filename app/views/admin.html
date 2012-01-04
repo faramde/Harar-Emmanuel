@@ -9,12 +9,12 @@
         <link rel="stylesheet" type="text/css" media="screen" href="@{'/public/stylesheets/main.css'}" />
         <link rel="shortcut icon" type="image/png" href="@{'/public/images/favicon.png'}" />
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript" charset="${_response_encoding}"></script>
-    <script src="@{'/public/javascripts/jquery.dataTables.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js" type="text/javascript" charset="${_response_encoding}"></script>
-    <script src="@{'/public/javascripts/jquery.ui.selectmenu.js'}" type="text/javascript" charset="${_response_encoding}"></script>
-    <script src="@{'/public/javascripts/jquery.ui.timepicker.js'}" type="text/javascript" charset="${_response_encoding}"></script>
-	<script type="text/javascript" src="http://jqueryui.com/themeroller/themeswitchertool/"></script>
-    <script src="@{'/public/javascripts/setupControls.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+	    <script src="@{'/public/javascripts/jquery.dataTables.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+	    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js" type="text/javascript" charset="${_response_encoding}"></script>
+	    <script src="@{'/public/javascripts/jquery.ui.selectmenu.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+	    <script src="@{'/public/javascripts/jquery.ui.timepicker.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+		<script type="text/javascript" src="http://jqueryui.com/themeroller/themeswitchertool/"></script>
+	    <script src="@{'/public/javascripts/setupControls.js'}" type="text/javascript" charset="${_response_encoding}"></script>
 	
     </head>
     <body id="admin">
@@ -28,20 +28,18 @@
 			</div>
 		</div>
 		<div id="logo"> 
-			<h1>HEUC. administration</h1>
+			<h1><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			HEUC. administration</h1>
 		</div>
-        <div id="header2"> </div>       
-        </div>
-        <div id="main">
-            
+        <div id="header2">      
             <ul id="adminMenu">
                 #{secure.check 'admin'}
                     <li class="${request.controller == 'Members' ? 'selected' : ''}">
                         <a href="@{Members.list()}">Members</a>
                     </li>
-                    <li class="${request.controller == 'UploadVideo' ? 'selected' : ''}">
-						<a href="@{UploadVideo.index}">Upload Video</a>
-					</li>
+                     <li class="${request.controller == 'UploadVideo' ? 'selected' : ''}">
+                        <a href="@{UploadVideo.index}">Upload Video</a>
+                    </li>
 					<li> <li class="${request.controller == 'UploadPicture' ? 'selected' : ''}">
 						<a href="@{UploadPicture.index}">Upload Picture</a> 
 					</li>
@@ -63,7 +61,9 @@
                     <a href="@{Admin.index()}">My posts</a>
                 </li>
             </ul>
-            
+            </div> 
+        </div>
+        <div id="main">
             #{doLayout /} 
         </div>
         

@@ -1,0 +1,20 @@
+#{extends 'privateTemplate.html' /}
+#{set title:'Upload Video' /}
+
+
+<ul>
+#{list items:models.Video.findAll(), as:'videos'}
+	<video width="320" height="240" controls="controls">
+    <source src="@{UploadVideo.getVideo(videos.id)}"></source>
+	</video>
+#{/list}
+</ul>
+
+     
+<video width="320" height="240" controls="controls">
+  <source src="@{UploadVideo.getVideo(videos.id)}/>
+  <source src="http://w3schools.com/html5/movie.ogg" type="video/ogg" />
+  Your browser does not support the video tag.
+</video>
+
+        

@@ -5,7 +5,7 @@ import models.Video;
 import play.*;
 import play.mvc.*;
 
-public class UploadVideo extends Application{
+public class DisplayVideos extends Application{
    
 	public static void index() {
         render();

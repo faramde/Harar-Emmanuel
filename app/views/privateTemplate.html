@@ -20,7 +20,8 @@
 			</div>
 		</div>
 		<div id="logo"> 
-			<h1>Harar Emmanuel United Church.<strong class="fSuccess">${flash.success}</strong></h1> 
+			<h1><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			Harar Emmanuel United Church.<strong class="fSuccess">${flash.success}</strong></h1> 
 		</div>
 		<div id="header2">
              <div id="options">
@@ -30,6 +31,9 @@
 					</li>
 					<li class="${request.controller == 'ContactUs' ? 'selected' : ''}">
 						<a href="@{ContactUs.showContactUs}">Contact Us</a>
+					</li>
+					<li> <li class="${request.controller == 'DisplayVideos' ? 'selected' : ''}">
+						<a href="@{DisplayVideos.index}">Media Resources</a> 
 					</li>
 					<li> <li class="${request.controller == 'Ministries' ? 'selected' : ''}">
 						<a href="@{Ministries.index}">Our Ministries</a> 

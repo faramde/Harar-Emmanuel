@@ -6,8 +6,8 @@ html, body {
 }
 
 body {
-    width: 900px;
-    padding: 0 30px;
+   # width: 900px;
+ #   padding: 0 30px;
     margin: auto;
     
 }
@@ -15,12 +15,14 @@ body {
 /** Main content **/
 
 #main {
- #   background: -webkit-gradient(linear, left top, left 30%, from(#314660), to(#364B66));
-    -webkit-border-radius: 16px;
-    -moz-border-radius: 16px;
-    padding: 20px;
-    background-image: url("../images/page_bg.jpg");
-    width: 102%;
+    float: left;
+    width: 958px;
+    background: url("../images/bg-container.png") 0 0 repeat-x;
+   	position: relative;
+   	left: 140px;
+   	top: 10px;
+    height: 600px;
+    margin: auto;
 }
 
 /** Post **/
@@ -299,7 +301,7 @@ form label {
 
 #adminMenu {
     list-style: none;
-    padding: 0;
+    padding: 10px 20px 0 10px;
     margin: 0 0 20px 0;
 }
 
@@ -348,7 +350,7 @@ tr.odd {
 #crud #crudContent, #crudContent form, #crudListSearch, #crudListPagination, .crudButtons {
     background: transparent;
     border: none;
-    padding: 0;
+    padding: 10px 20px 0 10px;
 }
 
 #crudListTable {
