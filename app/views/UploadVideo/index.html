@@ -1,12 +1,14 @@
 #{extends 'privateTemplate.html' /}
 #{set title:'Upload Video' /}
 
-
-#{form @DisplayVideos.uploadVideo(), enctype:'multipart/form-data'}
-
-    <input type="file" name="video.videos" />
-    <input type="submit" name="submit" value="Save" />
-#{/form}
+#{form @UploadVideo.index(get(urlname))}
+    <p>
+        <label for="urlname">Enter URL: </label>
+        <input type="text" name="urlname" id="urlname" value="${params.urlname}" />
+        <input type="submit" value="Submit" />
+ #{/form}
+    
+<iframe width="320" height="240" src="${videosrc.trim()}" frameborder="0" allowfullscreen></iframe>
      
 
 

@@ -14,6 +14,7 @@
 	    <script src="@{'/public/javascripts/jquery.ui.selectmenu.js'}" type="text/javascript" charset="${_response_encoding}"></script>
 	    <script src="@{'/public/javascripts/jquery.ui.timepicker.js'}" type="text/javascript" charset="${_response_encoding}"></script>
 		<script type="text/javascript" src="http://jqueryui.com/themeroller/themeswitchertool/"></script>
+		  <script src="@{'/public/javascripts/tiny_mce346/tiny_mce.js'}" type="text/javascript" charset="${_response_encoding}"></script>
 	    <script src="@{'/public/javascripts/setupControls.js'}" type="text/javascript" charset="${_response_encoding}"></script>
 	
     </head>
@@ -36,6 +37,9 @@
                 #{secure.check 'admin'}
                     <li class="${request.controller == 'Members' ? 'selected' : ''}">
                         <a href="@{Members.list()}">Members</a>
+                    </li>
+                    <li class="${request.controller == 'VideosUrl' ? 'selected' : ''}">
+                        <a href="@{VideosUrl.list()}">Videos Url</a>
                     </li>
                      <li class="${request.controller == 'UploadVideo' ? 'selected' : ''}">
                         <a href="@{UploadVideo.index}">Upload Video</a>

@@ -20,7 +20,7 @@ body {
     background: url("../images/bg-container.png") 0 0 repeat-x;
    	position: relative;
    	left: 140px;
-   	top: 10px;
+   #	top: 10px;
     height: 600px;
     margin: auto;
 }
@@ -328,7 +328,7 @@ form label {
 }
 
 #crudContent h2 {
-    color: #EDC3CD !important;
+    color: #242C58 !important;
 }
 
 #crudContent thead tr {
@@ -363,11 +363,11 @@ tr.odd {
 }
 
 .crudField label {
-    color: #B8FA5C;
+    color: #242C58;
 }
 
 .crudHelp {
-    color: #fff !important;
+    color: #242C58 !important;
 }
 
 .crudField .tag {

@@ -49,14 +49,14 @@ select {
 
 #header {
     height: 100px;
-    width:1280px;
+    width:1366px;
     position: relative;
     left: -8px;
 }
 
 #header1 {
 	float: left;
-    width: 1280px;
+    width: 1336px;
     margin: 0;
     background: #fff url(../images/branding_main.png);
     border-bottom: 1px solid rgba(255,255,255,.5);
@@ -72,10 +72,10 @@ select {
 	float: left;
     width: 958px;
     margin: 0;
-   # background: #fff url(../images/branding_maim02.png);
+    background: #fff url(../images/hdr.bar.jpg);
     border-bottom: 1px solid rgba(255,255,255,.5);
     font-size: 12px;
-    height: 20px;
+    height: 114px;
     position: relative;
     right: -150px;
     text-align: right;  
@@ -246,7 +246,7 @@ text-shadow: #C89F40 2px 2px 2px;
     width: 690px;
     margin-top: 35px;
     margin-bottom: 10px;
-    margin-left: 5px;
+   # margin-left: 5px;
     padding-top: 5px;
     -webkit-box-shadow: 7px 7px 5px #000;
     box-shadow: 7px 7px 5px #000;
