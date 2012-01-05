@@ -5,18 +5,20 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<title>#{get 'title' /}</title>
-	<link rel="stylesheet" media="screen" href="@{'/public/stylesheets/showcase.css'}">
-    <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/jquery.ui.timepicker.css'}">
-    <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/jquery.ui.selectmenu.css'}">
-    <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/themes/dark-hive/jquery-ui-1.8.16.custom.css'}">
+    <link rel="stylesheet" media="screen" href="/public/stylesheets/jquery.ui.timepicker.css">
+    <link rel="stylesheet" media="screen" href="/public/stylesheets/jquery.ui.selectmenu.css">
+    <link rel="stylesheet" media="screen" href="/public/stylesheets/themes/dark-hive/jquery-ui-1.8.16.custom.css">
+    <link rel="stylesheet" media="screen" href="/public/stylesheets/showcase.css">
+
+    <link rel="shortcut icon" type="image/png" href="/public//images/favicon.png">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript" charset="${_response_encoding}"></script>
-    <script src="@{'/public/javascripts/jquery.dataTables.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+    <script src="/public/javascripts/jquery.dataTables.min.js" type="text/javascript" charset="${_response_encoding}"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js" type="text/javascript" charset="${_response_encoding}"></script>
-    <script src="@{'/public/javascripts/jquery.ui.selectmenu.js'}" type="text/javascript" charset="${_response_encoding}"></script>
-    <script src="@{'/public/javascripts/jquery.ui.timepicker.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+    <script src="/public/javascripts/jquery.ui.selectmenu.js" type="text/javascript" charset="${_response_encoding}"></script>
+    <script src="/public/javascripts/jquery.ui.timepicker.js" type="text/javascript" charset="${_response_encoding}"></script>
 	<script type="text/javascript" src="http://jqueryui.com/themeroller/themeswitchertool/"></script>
-    <script src="@{'/public/javascripts/tiny_mce346/tiny_mce.js'}" type="text/javascript" charset="${_response_encoding}"></script>
-    <script src="@{'/public/javascripts/setupControls.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+    <script src="/public/javascripts/tiny_mce346/tiny_mce.js" type="text/javascript" charset="${_response_encoding}"></script>
+    <script src="/public/javascripts/setupControls.js" type="text/javascript" charset="${_response_encoding}"></script>
 	
 </head>
 <body>
@@ -90,15 +92,28 @@
        	</aside>
 		<div id="content">
 	   			#{doLayout /}
-	   		</div>
-		<iframe width="320" height="240" src="http://www.youtube.com/embed/oMYXYRCRSqI?rel=0" frameborder="0" allowfullscreen></iframe>
-		<iframe width="320" height="240" src="http://www.youtube.com/embed/oMYXYRCRSqI?rel=0" frameborder="0" allowfullscreen></iframe>
-		<iframe width="320" height="240" src="http://www.youtube.com/embed/oMYXYRCRSqI?rel=0" frameborder="0" allowfullscreen></iframe>
-		<iframe width="320" height="240" src="http://www.youtube.com/embed/oMYXYRCRSqI?rel=0" frameborder="0" allowfullscreen></iframe>
-    	</div>
+	   	</div>
+		<div>
+	       <table id="dataTable">
+			    <thead>
+			        <tr>
+		                <th width="23%">Videos</th>
+		                <th width="23%">Action</th>
+					</tr>
+				</thead>
+				<tbody>
+	        	#{list items:models.Video.findAll(), as:'video'}
+				    <tr class="even">
+						<td>${video.name}</td>
+				      	<td><a href="@{DisplayVideos.show(video.id)}">View Video</a></td>
+				    </tr>
+	            #{/list}
+				</tbody>
+			</table>
+		</div>
     </div>
 	<div id="footer">
-            Harar Emmanuel United Church (እማኑኤል ህብረት ቤተክርስቲያን) </br>
+            Harar Emmanuel United Church (á¥ááá¤á áá¥á¨áµ á¤á°á­á­áµá²á«á) </br>
 			Is church that has its origins in different groups of charismatic youth's 
 			in the Ethiopian Orthodox Church. Its established in Harar
    	</div>

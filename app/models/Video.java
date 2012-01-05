@@ -1,24 +1,31 @@
 package models;
 
-import javax.persistence.Entity;
+import java.util.Date;
 
-import play.db.jpa.Blob;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+import play.data.validation.Email;
+import play.data.validation.Required;
 import play.db.jpa.Model;
 
 @Entity
 public class Video extends Model{
-	
-	public Blob videos;
+	public String name;
+	public String videosrc;
 
-	public Video(Blob videos) {
+
+	public Video(String videosrc, String name) {
 		super();
-		this.videos = videos;
+		this.videosrc = videosrc;
+		this.name = name;
 	}
+
 
 	@Override
 	public String toString() {
-		return "Video [videos=" + videos + "]";
-	} 
-	
+		return "Video [videosrc=" + videosrc + "]";
+	}
+
 	
 }

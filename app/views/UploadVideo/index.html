@@ -1,15 +1,5 @@
-#{extends 'privateTemplate.html' /}
+#{extends 'publicTemplate.html' /}
 #{set title:'Upload Video' /}
 
-#{form @UploadVideo.index(get(urlname))}
-    <p>
-        <label for="urlname">Enter URL: </label>
-        <input type="text" name="urlname" id="urlname" value="${params.urlname}" />
-        <input type="submit" value="Submit" />
- #{/form}
-    
-<iframe width="320" height="240" src="${videosrc.trim()}" frameborder="0" allowfullscreen></iframe>
-     
 
-
-        
+<iframe width="320" height="240" src="${video.videosrc}" frameborder="0" allowfullscreen></iframe>  

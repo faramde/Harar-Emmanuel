@@ -21,8 +21,6 @@ public class Member extends Model{
 	public String email;	
 	public String phone;
 	public String fax;
-	
-	
 
 	public Member(String name, String address, String kebele, Date dateOfBirth,
 			String poBox, String country, String email, String phone, String fax) {
@@ -37,8 +35,6 @@ public class Member extends Model{
 		this.phone = phone;
 		this.fax = fax;
 	}
-
-
 
 	public String toString() {
 		return name;
