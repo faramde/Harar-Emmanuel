@@ -41,13 +41,15 @@
 					<li class="${request.controller == 'ContactUs' ? 'selected' : ''}">
 						<a href="@{ContactUs.showContactUs}">Contact Us</a>
 					</li>
+					<li> <li class="${request.controller == 'UploadPicture' ? 'selected' : ''}">
+						<a href="@{UploadPicture.index}">Pictures</a> 
+					</li>
 					<li class="${request.controller == 'Events' ? 'selected' : ''}">
 						<a href="@{Events.showEvents}">Events</a>
 					</li>
 					<li> <li class="${request.controller == 'Ministries' ? 'selected' : ''}">
 						<a href="@{Ministries.index}">Our Ministries</a> 
 					</li>
-					
 				</ul>
 			</div>
 		</div>

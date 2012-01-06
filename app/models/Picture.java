@@ -12,5 +12,17 @@ import play.db.jpa.Model;
 @Entity
 public class Picture extends Model {
 
-	public Blob image; 
+	public Blob image;
+
+	public Picture(Blob image) {
+		super();
+		this.image = image;
+	}
+
+	@Override
+	public String toString() {
+		return "Picture [image=" + image + "]";
+	} 
+	
+	
 }

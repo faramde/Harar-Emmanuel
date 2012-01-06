@@ -35,20 +35,20 @@
         <div id="header2">      
             <ul id="adminMenu">
                 #{secure.check 'admin'}
-					<li> <li class="${request.controller == 'Menus' ? 'selected' : ''}">
+					<li class="${request.controller == 'Menus' ? 'selected' : ''}">
 						<a href="@{Application.logout()}">Home</a> 
 					</li>                
                     <li class="${request.controller == 'Members' ? 'selected' : ''}">
                         <a href="@{Members.list()}">Members</a>
                     </li>
+                    <li class="${request.controller == 'Pictures' ? 'selected' : ''}">
+                        <a href="@{Pictures.list()}">Upload Picures</a>
+                    </li>                    
                     <li class="${request.controller == 'Videos' ? 'selected' : ''}">
-                        <a href="@{Videos.list()}">Videos Url</a>
+                        <a href="@{Videos.list()}">Upload Videos</a>
                     </li>
-                     <li class="${request.controller == 'UploadVideo' ? 'selected' : ''}">
-                        <a href="@{UploadVideo.index}">Upload Video</a>
-                    </li>
-					<li> <li class="${request.controller == 'UploadPicture' ? 'selected' : ''}">
-						<a href="@{UploadPicture.index}">Upload Picture</a> 
+					<li class="${request.controller == 'UploadPicture' ? 'selected' : ''}">
+						<a href="@{UploadPicture.index}">Pictures</a> 
 					</li>
                     <li class="${request.controller == 'Posts' ? 'selected' : ''}">
                         <a href="@{Posts.list()}">Posts</a>
